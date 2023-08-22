@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:task_method_channel/features/dogImage/random_dog_image.dart';
+import 'package:task_method_channel/features/profile/user_profile.dart';
 
 import '../../constants.dart';
 import '../../widgets/widgets.dart';
@@ -40,7 +41,12 @@ class _LandingPageState extends State<LandingPage> with TaskWidgets{
             const SizedBox(height: 20),
             ElevatedButton(onPressed: (){enableBluetoothMethodChannel();}, child: const Text(Constant.enableBluetooth)),
             const SizedBox(height: 20),
-            ElevatedButton(onPressed: (){}, child: const Text(Constant.profile))
+            ElevatedButton(onPressed: (){
+              Navigator.push(
+             context,
+            MaterialPageRoute(builder: (context) => const UserProfile()),
+            );
+            }, child: const Text(Constant.profile))
           ],
         ),
       )

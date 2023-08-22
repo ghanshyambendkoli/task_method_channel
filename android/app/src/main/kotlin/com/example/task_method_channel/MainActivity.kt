@@ -43,7 +43,7 @@ class MainActivity: FlutterActivity() {
                     startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT)
                 }
 
-                
+
             }
             else {
                 result.notImplemented()
