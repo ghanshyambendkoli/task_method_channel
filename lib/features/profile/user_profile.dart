@@ -31,12 +31,8 @@ class _UserProfileState extends State<UserProfile> with TaskWidgets{
 
     if (response.statusCode == 200) {
       var dataResponse = await json.decode(response.body);
-      // var resp = await UserProfileModel.fromJson(response.body[0].["results"]);
-      // imageUrl = dataResponse["message"];
       isLoading= false;
-      log(dataResponse["results"][0].toString());
       userProfile= UserProfileModel.fromJson(dataResponse["results"][0]);
-     log(userProfile.name.toString());
       setState(() {
         
       });
@@ -50,7 +46,6 @@ class _UserProfileState extends State<UserProfile> with TaskWidgets{
   formatDate(date){
     final DateFormat formatter = DateFormat('dd-MM-yyyy');
   final String formatted = formatter.format(DateTime.parse(date));
-    // listdata[index].dueDate;
     return formatted;
   }
 
